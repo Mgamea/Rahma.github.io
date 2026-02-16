@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayer Times - Rahma Islamic Centre</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="Rahma Logo" class="logo-img">
+                <span>Rahma Islamic Centre</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="prayer-times.html" class="active">Prayer Times</a></li>
+                <li><a href="activities.html">Activities & Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <button class="donate-btn" onclick="window.location.href='donate.html'">DONATE</button>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Prayer Times Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Prayer Times</h1>
+        </div>
+    </section>
+
+    <!-- Month Selector and Calendar -->
+    <section class="prayer-schedule">
+        <div class="container">
+            <!-- Month Selector -->
+            <div class="month-selector">
+                <select id="monthPicker" class="month-dropdown">
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+                <button class="print-btn" onclick="window.print()">
+                    <i class="fas fa-print"></i> Print Schedule
+                </button>
+            </div>
+
+            <!-- Prayer Times Table -->
+            <div class="prayer-table-wrapper">
+                <table class="prayer-table" id="prayerTable">
+                    <!-- Table will be populated by JavaScript -->
+                </table>
+            </div>
+
+            <!-- Live Prayer Times Widget -->
+            <div class="live-prayer-times">
+                <h2>Today's Prayer Times</h2>
+                <div class="today-prayers">
+                    <div class="prayer-time-item">
+                        <i class="fas fa-sun"></i>
+                        <h3>Fajr</h3>
+                        <p class="time" id="today-fajr">--:--</p>
+                    </div>
+                    <div class="prayer-time-item">
+                        <i class="fas fa-cloud-sun"></i>
+                        <h3>Dhuhr</h3>
+                        <p class="time" id="today-dhuhr">--:--</p>
+                    </div>
+                    <div class="prayer-time-item">
+                        <i class="fas fa-sun"></i>
+                        <h3>Asr</h3>
+                        <p class="time" id="today-asr">--:--</p>
+                    </div>
+                    <div class="prayer-time-item">
+                        <i class="fas fa-cloud-moon"></i>
+                        <h3>Maghrib</h3>
+                        <p class="time" id="today-maghrib">--:--</p>
+                    </div>
+                    <div class="prayer-time-item">
+                        <i class="fas fa-moon"></i>
+                        <h3>Isha</h3>
+                        <p class="time" id="today-isha">--:--</p>
+                    </div>
+                </div>
+                <p class="location-info">
+                    <i class="fas fa-map-marker-alt"></i> 574 Watt St, Winnipeg, MB R2K 4K1
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Stay Up To Date</h3>
+                    <p>Subscribe to our newsletter and get notified about our upcoming events and activities</p>
+                    <button class="subscribe-btn" onclick="window.location.href='newsletter.html'">SUBSCRIBE</button>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="prayer-times.html">Prayer Times</a></li>
+                        <li><a href="activities.html">Activities & Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 574 Watt St, Winnipeg, MB R2K 4K1</li>
+                        <li><i class="fas fa-phone"></i> +14317923791</li>
+                        <li><i class="fas fa-envelope"></i> rahmaislamiccentre@gmail.com</li>
+                    </ul>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2026 | Powered by devodez solutions</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Configuration - Prayer times API
+        const MOSQUE_CONFIG = {
+            latitude: 49.8951,
+            longitude: -97.1384,
+            city: "Winnipeg",
+            country: "Canada",
+            method: 2
+        };
+
+        // Format time from 24h to 12h
+        function formatTime(time24) {
+            const [hours, minutes] = time24.split(':');
+            let hour = parseInt(hours);
+            const ampm = hour >= 12 ? 'pm' : 'am';
+            hour = hour % 12 || 12;
+            return hour + ':' + minutes + ' ' + ampm;
+        }
+
+        // Helper function to add minutes to time
+        function addMinutes(time24, minutes) {
+            const [hours, mins] = time24.split(':');
+            let totalMinutes = (parseInt(hours) * 60) + parseInt(mins) + minutes;
+            const newHours = Math.floor(totalMinutes / 60) % 24;
+            const newMins = totalMinutes % 60;
+            return newHours.toString().padStart(2, '0') + ':' + newMins.toString().padStart(2, '0');
+        }
+
+        // Display prayer times table
+        function displayPrayerTable(monthData, monthNum) {
+            const monthNames = ['', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            
+            const today = new Date();
+            const todayDate = today.getDate();
+            const todayMonth = today.getMonth() + 1;
+            const todayYear = today.getFullYear();
+            
+            let tableHTML = '<thead>';
+            tableHTML += '<tr class="month-row"><th colspan="13">' + monthNames[monthNum] + '</th></tr>';
+            tableHTML += '<tr class="prayer-names-row"><th rowspan="2">Date</th><th rowspan="2">Day</th>';
+            tableHTML += '<th colspan="3">Fajr</th><th colspan="2">Zuhr</th><th colspan="2">Asr</th>';
+            tableHTML += '<th colspan="2">Maghrib</th><th colspan="2">Isha</th></tr>';
+            tableHTML += '<tr class="column-headers"><th>Athan</th><th>Iqamah</th><th>Sunrise</th>';
+            tableHTML += '<th>Athan</th><th>Iqamah</th><th>Athan</th><th>Iqamah</th>';
+            tableHTML += '<th>Athan</th><th>Iqamah</th><th>Athan</th><th>Iqamah</th></tr></thead><tbody>';
+
+            monthData.forEach(function(day) {
+                const date = day.date.gregorian;
+                const timings = day.timings;
+                const isFriday = day.date.gregorian.weekday.en === 'Friday';
+                const isToday = (parseInt(date.day) === todayDate && monthNum === todayMonth && parseInt(date.year) === todayYear);
+                const rowClass = isFriday ? 'friday-row' : (isToday ? 'today-row' : '');
+
+                const fajrIqamah = addMinutes(timings.Fajr, 15);
+                const asrIqamah = addMinutes(timings.Asr, 15);
+                const maghribIqamah = addMinutes(timings.Maghrib, 5);
+                const ishaIqamah = addMinutes(timings.Isha, 15);
+
+                tableHTML += '<tr class="' + rowClass + '">';
+                tableHTML += '<td>' + date.day + ', ' + date.year + '</td>';
+                tableHTML += '<td>' + date.weekday.en + '</td>';
+                tableHTML += '<td>' + formatTime(timings.Fajr) + '</td>';
+                tableHTML += '<td>' + formatTime(fajrIqamah) + '</td>';
+                tableHTML += '<td>' + formatTime(timings.Sunrise) + '</td>';
+                tableHTML += '<td>' + formatTime(timings.Dhuhr) + '</td>';
+                tableHTML += '<td>1:30 pm</td>';
+                tableHTML += '<td>' + formatTime(timings.Asr) + '</td>';
+                tableHTML += '<td>' + formatTime(asrIqamah) + '</td>';
+                tableHTML += '<td>' + formatTime(timings.Maghrib) + '</td>';
+                tableHTML += '<td>' + formatTime(maghribIqamah) + '</td>';
+                tableHTML += '<td>' + formatTime(timings.Isha) + '</td>';
+                tableHTML += '<td>' + formatTime(ishaIqamah) + '</td>';
+                tableHTML += '</tr>';
+            });
+
+            tableHTML += '</tbody>';
+            document.getElementById('prayerTable').innerHTML = tableHTML;
+        }
+
+        // Load monthly prayer times
+        async function loadMonthlyPrayerTimes(year, month) {
+            try {
+                const url = 'https://api.aladhan.com/v1/calendar/' + year + '/' + month + '?latitude=' + MOSQUE_CONFIG.latitude + '&longitude=' + MOSQUE_CONFIG.longitude + '&method=' + MOSQUE_CONFIG.method;
+                const response = await fetch(url);
+                const data = await response.json();
+                if (data.code === 200) {
+                    displayPrayerTable(data.data, month);
+                }
+            } catch (error) {
+                console.error('Error loading prayer times:', error);
+            }
+        }
+
+        // Load today's prayer times
+        async function loadTodayPrayerTimes() {
+            try {
+                const today = new Date();
+                const day = today.getDate();
+                const month = today.getMonth() + 1;
+                const year = today.getFullYear();
+                const url = 'https://api.aladhan.com/v1/timings/' + day + '-' + month + '-' + year + '?latitude=' + MOSQUE_CONFIG.latitude + '&longitude=' + MOSQUE_CONFIG.longitude + '&method=' + MOSQUE_CONFIG.method;
+                const response = await fetch(url);
+                const data = await response.json();
+                if (data.code === 200) {
+                    const timings = data.data.timings;
+                    document.getElementById('today-fajr').textContent = formatTime(timings.Fajr);
+                    document.getElementById('today-dhuhr').textContent = formatTime(timings.Dhuhr);
+                    document.getElementById('today-asr').textContent = formatTime(timings.Asr);
+                    document.getElementById('today-maghrib').textContent = formatTime(timings.Maghrib);
+                    document.getElementById('today-isha').textContent = formatTime(timings.Isha);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        // Month picker
+        document.getElementById('monthPicker').addEventListener('change', function(e) {
+            const month = parseInt(e.target.value);
+            const year = new Date().getFullYear();
+            loadMonthlyPrayerTimes(year, month);
+        });
+
+        // Mobile menu
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Initialize
+        window.addEventListener('load', function() {
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = today.getMonth() + 1;
+            document.getElementById('monthPicker').value = month.toString();
+            loadMonthlyPrayerTimes(year, month);
+            loadTodayPrayerTimes();
+        });
+    </script>
+</body>
+</html>
