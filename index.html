@@ -265,7 +265,7 @@
                     <ul class="contact-info">
                         <li><i class="fas fa-map-marker-alt"></i> 574 Watt St, Winnipeg, MB R2K 4K1</li>
                         <li><i class="fas fa-phone"></i> +14317923791</li>
-                        <li><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a7d5c6cfcac6ced4cbc6cacec4c4c2c9d3d5c2e7c0cac6cecb89c4c8ca">rahmaislamiccentre@gmail.com</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a7d5c6cfcac6ced4cbc6cacec4c4c2c9d3d5c2e7c0cac6cecb89c4c8ca"><span class="__cf_email__" data-cfemail="304251585d5159435c515d595353555e44425570575d51595c1e535f5d">rahmaislamiccentre@gmail.com</span></a></li>
                     </ul>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -281,15 +281,22 @@
     </footer>
 
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // ===== CONFIGURATION DES HORAIRES DE PRIÈRE =====
-        // 🔧 Modifiez ces coordonnées pour votre mosquée
+        // 🔧 Configuration pour Rahma Islamic Centre
         const MOSQUE_CONFIG = {
-            latitude: 49.8951,    // Exemple: Winnipeg, Manitoba - CHANGEZ ICI
-            longitude: -97.1384,  // CHANGEZ ICI
-            city: "Winnipeg",     // CHANGEZ ICI
-            country: "Canada",    // CHANGEZ ICI
+            // Main Mosque: 574 Watt St, Winnipeg, MB R2K 4K1
+            latitude: 49.8951,
+            longitude: -97.1384,
+            city: "Winnipeg",
+            country: "Canada",
             method: 2,  // 2 = ISNA (Islamic Society of North America)
+            
+            // Jumu'ah (Friday Prayer) Information
+            jumuahLocation: "Chalmers Community Centre",
+            jumuahAddress: "480 Chalmers Ave, Winnipeg, MB R2L 0G5",
+            jumuahTime1: "12:30 pm",  // First Jumu'ah
+            jumuahTime2: "1:20 pm"     // Second Jumu'ah
         };
 
         // ===== HORLOGE EN TEMPS RÉEL =====
@@ -337,12 +344,13 @@
                     document.getElementById('maghrib-time').textContent = formatTime(timings.Maghrib);
                     document.getElementById('isha-time').textContent = formatTime(timings.Isha);
                     
-                    // Jumu'ah 
-                    document.getElementById('jumuah-time').textContent = formatTime(timings.Dhuhr);
+                    // Jumu'ah (Friday Prayer) - 2 times at Chalmers
+                    const jumuahDisplay = `${MOSQUE_CONFIG.jumuahTime1} & ${MOSQUE_CONFIG.jumuahTime2}`;
+                    document.getElementById('jumuah-time').textContent = jumuahDisplay;
                     
-                    // Afficher la localisation
+                    // Afficher la localisation avec info Jumu'ah
                     document.getElementById('prayerLocation').textContent = 
-                        `📍 ${MOSQUE_CONFIG.city}, ${MOSQUE_CONFIG.country}`;
+                        `📍 ${MOSQUE_CONFIG.city} | Jumu'ah @ ${MOSQUE_CONFIG.jumuahLocation}`;
                 } else {
                     loadFallbackTimes();
                 }
@@ -401,11 +409,29 @@
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
+                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
             } else {
-                navbar.classList.remove('scrolled');
+                navbar.style.boxShadow = 'none';
             }
         });
 
-        // ===== INITIALISATION =====
-        window.add
+        // ===== INITIALISATION AU CHARGEMENT DE LA PAGE =====
+        window.addEventListener('DOMContentLoaded', function() {
+            console.log('Page loaded - Initializing...');
+            
+            // Démarrer l'horloge
+            updateTime();
+            setInterval(updateTime, 1000);
+            
+            // Afficher la date
+            displayDate();
+            
+            // Charger les horaires de prière
+            loadPrayerTimes();
+            
+            // Actualiser les horaires toutes les heures
+            setInterval(loadPrayerTimes, 3600000); // 1 heure = 3600000 ms
+        });
+    </script>
+</body>
+</html>

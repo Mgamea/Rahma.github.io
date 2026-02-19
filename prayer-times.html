@@ -133,7 +133,7 @@
                     <ul class="contact-info">
                         <li><i class="fas fa-map-marker-alt"></i> 574 Watt St, Winnipeg, MB R2K 4K1</li>
                         <li><i class="fas fa-phone"></i> +14317923791</li>
-                        <li><i class="fas fa-envelope"></i> rahmaislamiccentre@gmail.com</li>
+                        <li><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="780a19101519110b141915111b1b1d160c0a1d381f15191114561b1715">rahmaislamiccentre@gmail.com</a></li>
                     </ul>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -149,13 +149,22 @@
     </footer>
 
     <script>
-        // Configuration - Prayer times API
+        // ============================================
+        // MOSQUE CONFIGURATION
+        // ============================================
         const MOSQUE_CONFIG = {
-            latitude: 49.8951,
+            // Main Mosque Location: 574 Watt St, Winnipeg, MB R2K 4K1
+            latitude: 49.8951,    // Correct coordinates for 574 Watt St
             longitude: -97.1384,
             city: "Winnipeg",
             country: "Canada",
-            method: 2
+            method: 2,  // ISNA (Islamic Society of North America)
+            
+            // Jumu'ah (Friday Prayer) Information
+            jumuahLocation: "Chalmers Community Centre",
+            jumuahAddress: "480 Chalmers Ave, Winnipeg, MB R2L 0G5",
+            jumuahTime1: "12:30 pm",  // First Jumu'ah
+            jumuahTime2: "1:20 pm"     // Second Jumu'ah
         };
 
         // Format time from 24h to 12h
@@ -202,6 +211,7 @@
                 const rowClass = isFriday ? 'friday-row' : (isToday ? 'today-row' : '');
 
                 const fajrIqamah = addMinutes(timings.Fajr, 15);
+                const zuhrIqamah = addMinutes(timings.Dhuhr, 20); // Dhuhr + 20 minutes
                 const asrIqamah = addMinutes(timings.Asr, 15);
                 const maghribIqamah = addMinutes(timings.Maghrib, 5);
                 const ishaIqamah = addMinutes(timings.Isha, 15);
@@ -213,7 +223,14 @@
                 tableHTML += '<td>' + formatTime(fajrIqamah) + '</td>';
                 tableHTML += '<td>' + formatTime(timings.Sunrise) + '</td>';
                 tableHTML += '<td>' + formatTime(timings.Dhuhr) + '</td>';
-                tableHTML += '<td>1:30 pm</td>';
+                
+                // Show Jumu'ah times on Friday, calculated Zuhr Iqamah on other days
+                if (isFriday) {
+                    tableHTML += '<td style="font-size: 0.85em; font-weight: bold;">Jumu\'ah:<br>' + MOSQUE_CONFIG.jumuahTime1 + '<br>' + MOSQUE_CONFIG.jumuahTime2 + '</td>';
+                } else {
+                    tableHTML += '<td>' + formatTime(zuhrIqamah) + '</td>'; // Calculated Iqamah
+                }
+                
                 tableHTML += '<td>' + formatTime(timings.Asr) + '</td>';
                 tableHTML += '<td>' + formatTime(asrIqamah) + '</td>';
                 tableHTML += '<td>' + formatTime(timings.Maghrib) + '</td>';
@@ -224,6 +241,12 @@
             });
 
             tableHTML += '</tbody>';
+            
+            // Add Jumu'ah location note after table
+            tableHTML += '<tfoot><tr><td colspan="13" style="text-align: center; padding: 15px; font-size: 0.9em; background: #f0f8ff;">';
+            tableHTML += '<strong>Jumu\'ah Location:</strong> ' + MOSQUE_CONFIG.jumuahLocation + ' (' + MOSQUE_CONFIG.jumuahAddress + ')';
+            tableHTML += '</td></tr></tfoot>';
+            
             document.getElementById('prayerTable').innerHTML = tableHTML;
         }
 
@@ -279,13 +302,20 @@
             hamburger.classList.toggle('active');
         });
 
-        // Initialize
-        window.addEventListener('load', function() {
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            console.log('Prayer Times page loaded');
             const today = new Date();
             const year = today.getFullYear();
             const month = today.getMonth() + 1;
+            
+            // Set month picker to current month
             document.getElementById('monthPicker').value = month.toString();
+            
+            // Load monthly calendar
             loadMonthlyPrayerTimes(year, month);
+            
+            // Load today's times widget
             loadTodayPrayerTimes();
         });
     </script>
