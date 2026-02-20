@@ -20,12 +20,12 @@
                 <span>Rahma Islamic Centre</span>
             </a>
             <ul class="nav-links">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="prayer-times.html">Prayer Times</a></li>
-				<li><a href="activities.html">Activities & Services</a></li>
-				<li><a href="about.html">About Us</a></li>
-				<li><a href="contact.html">Contact Us</a></li>
-			</ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="prayer-times.html">Prayer Times</a></li>
+                <li><a href="activities.html">Activities &amp; Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
             <button class="donate-btn" onclick="window.location.href='donate.html'">DONATE</button>
             <div class="hamburger">
                 <span></span>
@@ -41,7 +41,7 @@
         <div class="hero-content">
             <h1>Welcome to Rahma Islamic Centre</h1>
             <p>A place of worship, community, and spiritual growth</p>
-            <button class="hero-btn">Learn More</button>
+            <button class="hero-btn" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Learn More</button>
         </div>
     </section>
 
@@ -69,7 +69,7 @@
             <p>Stay updated with our latest events, programs, and announcements</p>
             <div class="newsletter-form">
                 <input type="email" placeholder="Enter your email address">
-				<button class="subscribe-btn" onclick="window.location.href='newsletter.html'">SUBSCRIBE</button>
+                <button class="subscribe-btn" onclick="window.location.href='newsletter.html'">SUBSCRIBE</button>
             </div>
         </div>
     </section>
@@ -82,7 +82,7 @@
                     <div>
                         <h2>Prayer Times</h2>
                         <p class="prayer-date" id="prayerDate">Loading...</p>
-                        <p class="prayer-location" id="prayerLocation">📍 Location</p>
+                        <p class="prayer-location" id="prayerLocation">📍 574 Watt St, Winnipeg, MB</p>
                     </div>
                     <div class="current-time" id="currentTime">12:00 PM</div>
                 </div>
@@ -90,32 +90,32 @@
                     <div class="prayer-item">
                         <i class="fas fa-sun"></i>
                         <h4>Fajr</h4>
-                        <p class="time" id="fajr-time">5:30 AM</p>
+                        <p class="time" id="fajr-time">--:--</p>
                     </div>
                     <div class="prayer-item">
                         <i class="fas fa-cloud-sun"></i>
                         <h4>Dhuhr</h4>
-                        <p class="time" id="dhuhr-time">12:45 PM</p>
+                        <p class="time" id="dhuhr-time">--:--</p>
                     </div>
                     <div class="prayer-item">
                         <i class="fas fa-sun"></i>
                         <h4>Asr</h4>
-                        <p class="time" id="asr-time">3:30 PM</p>
+                        <p class="time" id="asr-time">--:--</p>
                     </div>
                     <div class="prayer-item">
                         <i class="fas fa-cloud-moon"></i>
                         <h4>Maghrib</h4>
-                        <p class="time" id="maghrib-time">6:15 PM</p>
+                        <p class="time" id="maghrib-time">--:--</p>
                     </div>
                     <div class="prayer-item">
                         <i class="fas fa-moon"></i>
                         <h4>Isha</h4>
-                        <p class="time" id="isha-time">7:45 PM</p>
+                        <p class="time" id="isha-time">--:--</p>
                     </div>
                     <div class="prayer-item">
                         <i class="fas fa-star"></i>
                         <h4>Jumu'ah</h4>
-                        <p class="time" id="jumuah-time">1:30 PM</p>
+                        <p class="time" id="jumuah-time">12:30 & 1:20 pm</p>
                     </div>
                 </div>
             </div>
@@ -125,7 +125,7 @@
     <!-- Activities & Services -->
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">Our Activities & Services</h2>
+            <h2 class="section-title">Our Activities &amp; Services</h2>
             
             <!-- Row 1: 3 cards -->
             <div class="services-grid services-grid-3">
@@ -238,7 +238,7 @@
         <div class="container donate-container">
             <h2>Help Us Maintain Rahma Islamic Center</h2>
             <p>Your generous donations help us continue serving the community and maintaining our facilities</p>
-            <button class="donate-cta-btn">DONATE NOW</button>
+            <button class="donate-cta-btn" onclick="window.location.href='donate.html'">DONATE NOW</button>
         </div>
     </section>
 
@@ -252,21 +252,21 @@
                     <button class="subscribe-btn" onclick="window.location.href='newsletter.html'">SUBSCRIBE</button>
                 </div>
                 <div class="footer-col">
-					<h4>Quick Links</h4>
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="prayer-times.html">Prayer Times</a></li>
-						<li><a href="activities.html">Activities & Services</a></li>
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="contact.html">Contact Us</a></li>
-					</ul>
-				</div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="prayer-times.html">Prayer Times</a></li>
+                        <li><a href="activities.html">Activities &amp; Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul class="contact-info">
                         <li><i class="fas fa-map-marker-alt"></i> 574 Watt St, Winnipeg, MB R2K 4K1</li>
                         <li><i class="fas fa-phone"></i> +14317923791</li>
-                        <li><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a7d5c6cfcac6ced4cbc6cacec4c4c2c9d3d5c2e7c0cac6cecb89c4c8ca"><span class="__cf_email__" data-cfemail="304251585d5159435c515d595353555e44425570575d51595c1e535f5d"><span class="__cf_email__" data-cfemail="f280939a9f939b819e939f9b9191979c868097b2959f939b9edc919d9f">[email&#160;protected]</span></span></a></li>
+                        <li><i class="fas fa-envelope"></i> info@rahmacentre.ca</li>
                     </ul>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -276,31 +276,26 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>Copyright © 2026 | Powered by devodez solutions</p>
+                <p>Copyright &copy; 2026 | Powered by devodez solutions</p>
             </div>
         </div>
     </footer>
 
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // ===== CONFIGURATION DES HORAIRES DE PRIÈRE =====
-        // 🔧 Configuration pour Rahma Islamic Centre
+    <script>
+        // ===== MOSQUE CONFIGURATION =====
         const MOSQUE_CONFIG = {
-            // Main Mosque: 574 Watt St, Winnipeg, MB R2K 4K1
             latitude: 49.8951,
             longitude: -97.1384,
             city: "Winnipeg",
             country: "Canada",
-            method: 2,  // 2 = ISNA (Islamic Society of North America)
-            
-            // Jumu'ah (Friday Prayer) Information
+            method: 2, // ISNA
             jumuahLocation: "Chalmers Community Centre",
             jumuahAddress: "480 Chalmers Ave, Winnipeg, MB R2L 0G5",
-            jumuahTime1: "12:30 pm",  // First Jumu'ah
-            jumuahTime2: "1:20 pm"     // Second Jumu'ah
+            jumuahTime1: "12:30 pm",
+            jumuahTime2: "1:20 pm"
         };
 
-        // ===== HORLOGE EN TEMPS RÉEL =====
+        // ===== REAL-TIME CLOCK =====
         function updateTime() {
             const now = new Date();
             const timeString = now.toLocaleTimeString('en-US', { 
@@ -308,28 +303,35 @@
                 minute: '2-digit',
                 hour12: true 
             });
-            document.getElementById('currentTime').textContent = timeString;
+            const el = document.getElementById('currentTime');
+            if (el) el.textContent = timeString;
         }
-        
-        updateTime();
-        setInterval(updateTime, 1000);
 
-        // ===== AFFICHAGE DE LA DATE =====
+        // ===== DATE DISPLAY =====
         function displayDate() {
             const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
             const today = new Date();
-            document.getElementById('prayerDate').textContent = today.toLocaleDateString('en-US', options);
+            const el = document.getElementById('prayerDate');
+            if (el) el.textContent = today.toLocaleDateString('en-US', options);
         }
 
-        // ===== CHARGEMENT DES HORAIRES DE PRIÈRE =====
+        // ===== FORMAT 24h → 12h =====
+        function formatTime(time24) {
+            const parts = time24.split(':');
+            let hour = parseInt(parts[0]);
+            const minutes = parts[1];
+            const ampm = hour >= 12 ? 'PM' : 'AM';
+            hour = hour % 12 || 12;
+            return hour + ':' + minutes + ' ' + ampm;
+        }
+
+        // ===== LOAD PRAYER TIMES FROM API =====
         async function loadPrayerTimes() {
             try {
                 const today = new Date();
                 const day = today.getDate();
                 const month = today.getMonth() + 1;
                 const year = today.getFullYear();
-                
-                // API Aladhan - Horaires de prière islamiques
                 const url = `https://api.aladhan.com/v1/timings/${day}-${month}-${year}?latitude=${MOSQUE_CONFIG.latitude}&longitude=${MOSQUE_CONFIG.longitude}&method=${MOSQUE_CONFIG.method}`;
                 
                 const response = await fetch(url);
@@ -337,95 +339,71 @@
                 
                 if (data.code === 200) {
                     const timings = data.data.timings;
-                    
-                    // Mise à jour des horaires
                     document.getElementById('fajr-time').textContent = formatTime(timings.Fajr);
                     document.getElementById('dhuhr-time').textContent = formatTime(timings.Dhuhr);
                     document.getElementById('asr-time').textContent = formatTime(timings.Asr);
                     document.getElementById('maghrib-time').textContent = formatTime(timings.Maghrib);
                     document.getElementById('isha-time').textContent = formatTime(timings.Isha);
-                    
-                    // Jumu'ah (Friday Prayer) - 2 times at Chalmers
-                    const jumuahDisplay = `${MOSQUE_CONFIG.jumuahTime1} & ${MOSQUE_CONFIG.jumuahTime2}`;
-                    document.getElementById('jumuah-time').textContent = jumuahDisplay;
-                    
-                    // Afficher la localisation avec info Jumu'ah
-                    document.getElementById('prayerLocation').textContent = 
-                        `📍 ${MOSQUE_CONFIG.city} | Jumu'ah @ ${MOSQUE_CONFIG.jumuahLocation}`;
+                    document.getElementById('jumuah-time').textContent = MOSQUE_CONFIG.jumuahTime1 + ' & ' + MOSQUE_CONFIG.jumuahTime2;
+                    document.getElementById('prayerLocation').textContent = '📍 574 Watt St, Winnipeg | Jumu\'ah @ ' + MOSQUE_CONFIG.jumuahLocation;
                 } else {
                     loadFallbackTimes();
                 }
             } catch (error) {
-                console.error('Erreur API:', error);
+                console.error('Prayer times API error:', error);
                 loadFallbackTimes();
             }
         }
 
-        // ===== CONVERSION AU FORMAT 12H =====
-        function formatTime(time24) {
-            const [hours, minutes] = time24.split(':');
-            let hour = parseInt(hours);
-            const ampm = hour >= 12 ? 'PM' : 'AM';
-            hour = hour % 12 || 12;
-            return `${hour}:${minutes} ${ampm}`;
-        }
-
-        // ===== HORAIRES DE SECOURS =====
+        // ===== FALLBACK TIMES =====
         function loadFallbackTimes() {
             document.getElementById('fajr-time').textContent = '5:30 AM';
             document.getElementById('dhuhr-time').textContent = '12:45 PM';
             document.getElementById('asr-time').textContent = '3:30 PM';
             document.getElementById('maghrib-time').textContent = '6:15 PM';
             document.getElementById('isha-time').textContent = '7:45 PM';
-            document.getElementById('jumuah-time').textContent = '1:30 PM';
-            document.getElementById('prayerLocation').textContent = '📍 Offline Mode';
+            document.getElementById('jumuah-time').textContent = '12:30 & 1:20 pm';
+            document.getElementById('prayerLocation').textContent = '📍 574 Watt St, Winnipeg (Offline)';
         }
 
-        // ===== MENU MOBILE =====
+        // ===== MOBILE MENU =====
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
-        
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             hamburger.classList.toggle('active');
         });
 
-        // ===== NAVIGATION FLUIDE =====
+        // ===== SMOOTH SCROLLING =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     navLinks.classList.remove('active');
                     hamburger.classList.remove('active');
                 }
             });
         });
 
-        // ===== EFFET SCROLL NAVBAR =====
+        // ===== NAVBAR SCROLL EFFECT =====
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 100) {
-                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                navbar.classList.add('scrolled');
             } else {
-                navbar.style.boxShadow = 'none';
+                navbar.classList.remove('scrolled');
             }
         });
 
-        // ===== INITIALISATION AU CHARGEMENT DE LA PAGE =====
+        // ===== INIT ON PAGE LOAD =====
         window.addEventListener('DOMContentLoaded', function() {
-            console.log('Page loaded - Initializing...');
-            
-            // Démarrer l'horloge
             updateTime();
             setInterval(updateTime, 1000);
-            
-            // Afficher la date
             displayDate();
-            
-            // Charger les horaires de prière
-       
+            loadPrayerTimes();
+        });
+    </script>
+</body>
+</html>

@@ -22,7 +22,7 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="prayer-times.html" class="active">Prayer Times</a></li>
-                <li><a href="activities.html">Activities & Services</a></li>
+                <li><a href="activities.html">Activities &amp; Services</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
@@ -31,15 +31,15 @@
                 <span></span>
                 <span></span>
                 <span></span>
-            </a>
-        </a>
+            </div>
+        </div>
     </nav>
 
     <!-- Prayer Times Header -->
     <section class="page-header">
         <div class="container">
             <h1>Prayer Times</h1>
-        </a>
+        </div>
     </section>
 
     <!-- Month Selector and Calendar -->
@@ -64,50 +64,54 @@
                 <button class="print-btn" onclick="window.print()">
                     <i class="fas fa-print"></i> Print Schedule
                 </button>
-            </a>
+            </div>
 
             <!-- Prayer Times Table -->
             <div class="prayer-table-wrapper">
                 <table class="prayer-table" id="prayerTable">
                     <!-- Table will be populated by JavaScript -->
                 </table>
-            </a>
+            </div>
 
             <!-- Live Prayer Times Widget -->
             <div class="live-prayer-times">
                 <h2>Today's Prayer Times</h2>
+                <p class="location-info">
+                    <i class="fas fa-map-marker-alt"></i> 574 Watt St, Winnipeg, MB R2K 4K1
+                </p>
                 <div class="today-prayers">
                     <div class="prayer-time-item">
                         <i class="fas fa-sun"></i>
                         <h3>Fajr</h3>
                         <p class="time" id="today-fajr">--:--</p>
-                    </a>
+                    </div>
                     <div class="prayer-time-item">
                         <i class="fas fa-cloud-sun"></i>
                         <h3>Dhuhr</h3>
                         <p class="time" id="today-dhuhr">--:--</p>
-                    </a>
+                    </div>
                     <div class="prayer-time-item">
                         <i class="fas fa-sun"></i>
                         <h3>Asr</h3>
                         <p class="time" id="today-asr">--:--</p>
-                    </a>
+                    </div>
                     <div class="prayer-time-item">
                         <i class="fas fa-cloud-moon"></i>
                         <h3>Maghrib</h3>
                         <p class="time" id="today-maghrib">--:--</p>
-                    </a>
+                    </div>
                     <div class="prayer-time-item">
                         <i class="fas fa-moon"></i>
                         <h3>Isha</h3>
                         <p class="time" id="today-isha">--:--</p>
-                    </a>
-                </a>
-                <p class="location-info">
-                    <i class="fas fa-map-marker-alt"></i> 574 Watt St, Winnipeg, MB R2K 4K1
+                    </div>
+                </div>
+                <p class="jumuah-note">
+                    <i class="fas fa-star"></i>
+                    <strong>Jumu'ah:</strong> 12:30 pm &amp; 1:20 pm at Chalmers Community Centre — 480 Chalmers Ave, Winnipeg, MB R2L 0G5
                 </p>
-            </a>
-        </a>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -118,35 +122,35 @@
                     <h3>Stay Up To Date</h3>
                     <p>Subscribe to our newsletter and get notified about our upcoming events and activities</p>
                     <button class="subscribe-btn" onclick="window.location.href='newsletter.html'">SUBSCRIBE</button>
-                </a>
+                </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="prayer-times.html">Prayer Times</a></li>
-                        <li><a href="activities.html">Activities & Services</a></li>
+                        <li><a href="activities.html">Activities &amp; Services</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
-                </a>
+                </div>
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul class="contact-info">
                         <li><i class="fas fa-map-marker-alt"></i> 574 Watt St, Winnipeg, MB R2K 4K1</li>
                         <li><i class="fas fa-phone"></i> +14317923791</li>
-                        <li><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="780a19101519110b141915111b1b1d160c0a1d381f15191114561b1715">[email&#160;protected]</a></li>
+                        <li><i class="fas fa-envelope"></i> info@rahmacentre.ca</li>
                     </ul>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                    </a>
-                </a>
-            </a>
+                    </div>
+                </div>
+            </div>
             <div class="footer-bottom">
-                <p>Copyright © 2026 | Powered by devodez solutions</p>
-            </a>
-        </a>
+                <p>Copyright &copy; 2026 | Powered by devodez solutions</p>
+            </div>
+        </div>
     </footer>
 
     <script>
@@ -154,24 +158,22 @@
         // MOSQUE CONFIGURATION
         // ============================================
         const MOSQUE_CONFIG = {
-            // Main Mosque Location: 574 Watt St, Winnipeg, MB R2K 4K1
-            latitude: 49.8951,    // Correct coordinates for 574 Watt St
+            latitude: 49.8951,
             longitude: -97.1384,
             city: "Winnipeg",
             country: "Canada",
-            method: 2,  // ISNA (Islamic Society of North America)
-            
-            // Jumu'ah (Friday Prayer) Information
+            method: 2, // ISNA
             jumuahLocation: "Chalmers Community Centre",
             jumuahAddress: "480 Chalmers Ave, Winnipeg, MB R2L 0G5",
-            jumuahTime1: "12:30 pm",  // First Jumu'ah
-            jumuahTime2: "1:20 pm"     // Second Jumu'ah
+            jumuahTime1: "12:30 pm",
+            jumuahTime2: "1:20 pm"
         };
 
         // Format time from 24h to 12h
         function formatTime(time24) {
-            const [hours, minutes] = time24.split(':');
-            let hour = parseInt(hours);
+            const parts = time24.split(':');
+            let hour = parseInt(parts[0]);
+            const minutes = parts[1];
             const ampm = hour >= 12 ? 'pm' : 'am';
             hour = hour % 12 || 12;
             return hour + ':' + minutes + ' ' + ampm;
@@ -179,8 +181,8 @@
 
         // Helper function to add minutes to time
         function addMinutes(time24, minutes) {
-            const [hours, mins] = time24.split(':');
-            let totalMinutes = (parseInt(hours) * 60) + parseInt(mins) + minutes;
+            const parts = time24.split(':');
+            let totalMinutes = (parseInt(parts[0]) * 60) + parseInt(parts[1]) + minutes;
             const newHours = Math.floor(totalMinutes / 60) % 24;
             const newMins = totalMinutes % 60;
             return newHours.toString().padStart(2, '0') + ':' + newMins.toString().padStart(2, '0');
@@ -188,7 +190,8 @@
 
         // Display prayer times table
         function displayPrayerTable(monthData, monthNum) {
-            const monthNames = ['', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            const monthNames = ['', 'January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'];
             
             const today = new Date();
             const todayDate = today.getDate();
@@ -207,12 +210,12 @@
             monthData.forEach(function(day) {
                 const date = day.date.gregorian;
                 const timings = day.timings;
-                const isFriday = day.date.gregorian.weekday.en === 'Friday';
+                const isFriday = date.weekday.en === 'Friday';
                 const isToday = (parseInt(date.day) === todayDate && monthNum === todayMonth && parseInt(date.year) === todayYear);
-                const rowClass = isFriday ? 'friday-row' : (isToday ? 'today-row' : '');
+                const rowClass = isToday ? 'today-row' : (isFriday ? 'friday-row' : '');
 
                 const fajrIqamah = addMinutes(timings.Fajr, 15);
-                const zuhrIqamah = addMinutes(timings.Dhuhr, 20); // Dhuhr + 20 minutes
+                const zuhrIqamah = addMinutes(timings.Dhuhr, 20);
                 const asrIqamah = addMinutes(timings.Asr, 15);
                 const maghribIqamah = addMinutes(timings.Maghrib, 5);
                 const ishaIqamah = addMinutes(timings.Isha, 15);
@@ -225,11 +228,10 @@
                 tableHTML += '<td>' + formatTime(timings.Sunrise) + '</td>';
                 tableHTML += '<td>' + formatTime(timings.Dhuhr) + '</td>';
                 
-                // Show Jumu'ah times on Friday, calculated Zuhr Iqamah on other days
                 if (isFriday) {
-                    tableHTML += '<td style="font-size: 0.85em; font-weight: bold;">Jumu\'ah:<br>' + MOSQUE_CONFIG.jumuahTime1 + '<br>' + MOSQUE_CONFIG.jumuahTime2 + '</td>';
+                    tableHTML += '<td class="jumuah-cell" style="font-size:0.85em;font-weight:bold;">Jumu\'ah:<br>' + MOSQUE_CONFIG.jumuahTime1 + '<br>' + MOSQUE_CONFIG.jumuahTime2 + '</td>';
                 } else {
-                    tableHTML += '<td>' + formatTime(zuhrIqamah) + '</td>'; // Calculated Iqamah
+                    tableHTML += '<td>' + formatTime(zuhrIqamah) + '</td>';
                 }
                 
                 tableHTML += '<td>' + formatTime(timings.Asr) + '</td>';
@@ -242,9 +244,7 @@
             });
 
             tableHTML += '</tbody>';
-            
-            // Add Jumu'ah location note after table
-            tableHTML += '<tfoot><tr><td colspan="13" style="text-align: center; padding: 15px; font-size: 0.9em; background: #f0f8ff;">';
+            tableHTML += '<tfoot><tr><td colspan="13" style="text-align:center;padding:15px;font-size:0.9em;background:#f0f8ff;">';
             tableHTML += '<strong>Jumu\'ah Location:</strong> ' + MOSQUE_CONFIG.jumuahLocation + ' (' + MOSQUE_CONFIG.jumuahAddress + ')';
             tableHTML += '</td></tr></tfoot>';
             
@@ -254,25 +254,34 @@
         // Load monthly prayer times
         async function loadMonthlyPrayerTimes(year, month) {
             try {
-                const url = 'https://api.aladhan.com/v1/calendar/' + year + '/' + month + '?latitude=' + MOSQUE_CONFIG.latitude + '&longitude=' + MOSQUE_CONFIG.longitude + '&method=' + MOSQUE_CONFIG.method;
+                const url = 'https://api.aladhan.com/v1/calendar/' + year + '/' + month +
+                    '?latitude=' + MOSQUE_CONFIG.latitude +
+                    '&longitude=' + MOSQUE_CONFIG.longitude +
+                    '&method=' + MOSQUE_CONFIG.method;
                 const response = await fetch(url);
                 const data = await response.json();
                 if (data.code === 200) {
                     displayPrayerTable(data.data, month);
+                } else {
+                    document.getElementById('prayerTable').innerHTML = '<tr><td colspan="13" style="text-align:center;padding:20px;">Unable to load prayer times. Please try again later.</td></tr>';
                 }
             } catch (error) {
                 console.error('Error loading prayer times:', error);
+                document.getElementById('prayerTable').innerHTML = '<tr><td colspan="13" style="text-align:center;padding:20px;">Error loading prayer times. Please check your connection.</td></tr>';
             }
         }
 
-        // Load today's prayer times
+        // Load today's prayer times widget
         async function loadTodayPrayerTimes() {
             try {
                 const today = new Date();
                 const day = today.getDate();
                 const month = today.getMonth() + 1;
                 const year = today.getFullYear();
-                const url = 'https://api.aladhan.com/v1/timings/' + day + '-' + month + '-' + year + '?latitude=' + MOSQUE_CONFIG.latitude + '&longitude=' + MOSQUE_CONFIG.longitude + '&method=' + MOSQUE_CONFIG.method;
+                const url = 'https://api.aladhan.com/v1/timings/' + day + '-' + month + '-' + year +
+                    '?latitude=' + MOSQUE_CONFIG.latitude +
+                    '&longitude=' + MOSQUE_CONFIG.longitude +
+                    '&method=' + MOSQUE_CONFIG.method;
                 const response = await fetch(url);
                 const data = await response.json();
                 if (data.code === 200) {
@@ -282,13 +291,24 @@
                     document.getElementById('today-asr').textContent = formatTime(timings.Asr);
                     document.getElementById('today-maghrib').textContent = formatTime(timings.Maghrib);
                     document.getElementById('today-isha').textContent = formatTime(timings.Isha);
+                } else {
+                    setFallbackTodayTimes();
                 }
             } catch (error) {
-                console.error('Error:', error);
+                console.error('Error loading today times:', error);
+                setFallbackTodayTimes();
             }
         }
 
-        // Month picker
+        function setFallbackTodayTimes() {
+            document.getElementById('today-fajr').textContent = '5:30 am';
+            document.getElementById('today-dhuhr').textContent = '12:45 pm';
+            document.getElementById('today-asr').textContent = '3:30 pm';
+            document.getElementById('today-maghrib').textContent = '6:15 pm';
+            document.getElementById('today-isha').textContent = '7:45 pm';
+        }
+
+        // Month picker change event
         document.getElementById('monthPicker').addEventListener('change', function(e) {
             const month = parseInt(e.target.value);
             const year = new Date().getFullYear();
@@ -305,18 +325,12 @@
 
         // Initialize on page load
         window.addEventListener('DOMContentLoaded', function() {
-            console.log('Prayer Times page loaded');
             const today = new Date();
             const year = today.getFullYear();
             const month = today.getMonth() + 1;
             
-            // Set month picker to current month
             document.getElementById('monthPicker').value = month.toString();
-            
-            // Load monthly calendar
             loadMonthlyPrayerTimes(year, month);
-            
-            // Load today's times widget
             loadTodayPrayerTimes();
         });
     </script>
