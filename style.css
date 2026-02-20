@@ -1724,3 +1724,13 @@ h1, h2, h3, h4, h5, h6 {
 .prayer-table tbody tr.today-row:hover {
     background: #BBDEFB !important;
 }
+/* Logo clickable - added styling */
+.logo {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
